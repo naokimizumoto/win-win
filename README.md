@@ -27,7 +27,7 @@ win-win
 授業用教材、宿題用教材、自学習用教材としての利用
 
 ## 設計書
-<ER図>https://app.diagrams.net/#G1WOSgADXgV2pebiK50EeFWLU1pOehNgKF
+＜ER図＞https://app.diagrams.net/#G1WOSgADXgV2pebiK50EeFWLU1pOehNgKF
 ＜テーブル定義書＞https://docs.google.com/spreadsheets/d/1VIlTukB1NedpLGBl5wbWzDpE45iywl78YjvpQ7VNqEE/edit#gid=1333200775
 ＜詳細設計＞https://docs.google.com/spreadsheets/d/1PoxkKQAb6ZvQo9Awy6MBVqmcmIMxv8zf_E2lkpA7ZnQ/edit#gid=0
 
