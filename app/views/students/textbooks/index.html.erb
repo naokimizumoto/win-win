@@ -1,0 +1,10 @@
+<h1>教材一覧</h1>
+
+<% @textbooks.each do |textbook| %>
+  <h3>教材名</h3>
+  <%= textbook.name %>
+ <h3>教材画像</h3>
+  <%= attachment_image_tag Textbook, :image, format: 'jpeg', size: "100x100" %>
+<%= textbook.name%>
+<%= textbook.image%>
+  <% end %>

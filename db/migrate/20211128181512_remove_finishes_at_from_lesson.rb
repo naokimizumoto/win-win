@@ -1,0 +1,5 @@
+class RemoveFinishesAtFromLesson < ActiveRecord::Migration[5.2]
+  def change
+    remove_column :lessons, :finishes_at, :string
+  end
+end

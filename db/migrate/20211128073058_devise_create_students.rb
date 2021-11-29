@@ -33,7 +33,7 @@ class DeviseCreateStudents < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
       t.string :name
-      t.string :student_number
+      t.string :number
       t.timestamps null: false
     end
 

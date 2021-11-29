@@ -13,5 +13,20 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+     <% if student_signed_in? %>
+      <li>
+        <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+      </li>
+      <li>
+        <%= link_to "授業一覧", students_lessons_path %>
+      </li>
+      <li>
+        <%= link_to "教材一覧", students_textbooks_path %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "ログイン", new_student_session_path %>
+      </li>
+    <% end %>
   </body>
 </html>
