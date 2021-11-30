@@ -1,0 +1,12 @@
+
+
+<ul>
+  <li><%= @student.name%></li>
+  <li><%= @student.name_kana%></li>
+  <li><%= @student.number%></li>
+</ul>
+
+
+
+<%= link_to "編集する", edit_teachers_student_path(@student.id) %>
+<%= link_to "削除する", teachers_student_path(@student.id),method: :delete, "data-confirm" => "本当に削除しますか"%>

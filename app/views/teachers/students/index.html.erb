@@ -1,0 +1,10 @@
+<%= link_to "生徒新規登録", new_teachers_student_path %>
+
+<h3>生徒一覧</h3>
+  <% @students.each do |student| %>
+  <h4>生徒番号</h4>
+  <% student.number%>
+
+  <h4>生徒名</h4>
+   <%= link_to student.name, teachers_student_path(student.id)%>
+<% end %>

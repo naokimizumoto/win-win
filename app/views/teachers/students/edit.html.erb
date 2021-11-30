@@ -1,0 +1,15 @@
+<%= form_with model: @student,url: teachers_student_path(@student.id) ,local: true do |f|%>
+<h4>氏名</h4>
+<%= f.text_field :name%>
+
+
+<h4>氏名カナ</h4>
+<%= f.text_field :name_kana%>
+<%= @student.name_kana%>
+
+<h4>生徒番号</h4>
+<%= f.text_field :number%>
+
+
+<%= f.submit "編集する"%>
+<% end %>

@@ -1,0 +1,14 @@
+<h3>生徒新規登録</h3>
+  <%= form_with model: @student,url: teachers_students_path, local: true do |f|%>
+
+  <h4>氏名</h4>
+  <%= f.text_field :name %>
+
+   <h4>氏名カナ</h4>
+  <%= f.text_field :name_kana %>
+
+  <h4>生徒番号</h4>
+  <%= f.text_field :number %>
+
+  <%= f.submit "新規登録"%>
+ <% end %>
