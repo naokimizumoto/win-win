@@ -4,7 +4,5 @@
   <h3>教材名</h3>
   <%= textbook.name %>
  <h3>教材画像</h3>
-  <%= attachment_image_tag Textbook, :image, format: 'jpeg', size: "100x100" %>
-<%= textbook.name%>
-<%= textbook.image%>
+  <%= attachment_image_tag textbook, :image, format: 'jpeg', size: "100x100" %>
   <% end %>
