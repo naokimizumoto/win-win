@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   namespace :teachers do
   resources :lessons
   resources :textbook_lessons, only: [:show]
-  resources :textbook_students, only: [:show]
+  resources :textbook_students, only: [:show,:new,:create,:index]
   resources :students
   end
 end

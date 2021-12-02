@@ -1,0 +1,15 @@
+
+<ul>
+  <li><%=@lesson.teacher_id %></li>
+  <li><%=@lesson.student_id %></li>
+  <li><%=@lesson.starts_at %></li>
+  <li><%=@lesson.ends_at %></li>
+  <li><%=@lesson.homework %></li>
+  <li><%=@lesson.notice %></li>
+  <li><%=@lesson.feedback %></li>
+  <%#= link_to teachers_textbook_lesson(@lesson.id)%>
+  <li><%=@lesson.text_name%></li>
+  <%# end %>
+</ul>
+<%= link_to "編集", edit_teachers_lesson_path %>
+<%= link_to "削除", teachers_lesson_path(@lesson.id),method: :delete, "data-confirm" => "本当に削除しますか"%>

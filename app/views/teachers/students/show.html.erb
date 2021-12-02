@@ -7,6 +7,9 @@
 </ul>
 
 
+<% @textbooks.each do |textbook_student|%>
+<%= attachment_image_tag textbook_student.textbook :image %>
+<% end %>
 
 <%= link_to "編集する", edit_teachers_student_path(@student.id) %>
 <%= link_to "削除する", teachers_student_path(@student.id),method: :delete, "data-confirm" => "本当に削除しますか"%>

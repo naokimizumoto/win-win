@@ -1,0 +1,33 @@
+<h3>授業新規登録</h3>
+  <%= form_with model: @lesson,url: teachers_lessons_path,local: true do |f|%>
+
+    <%= f.label :teacher_id, "講師名" %>
+     <%= f.collection_select(:teacher_id, Teacher.all, :id, :name ) %>
+    <%#= f.text_field :teacher_id%><br/>
+
+    <%= f.label :student_id, "生徒名" %>
+    <%= f.collection_select(:student_id, Student.all, :id, :name ) %>
+    <%#= f.text_field :@student_id%><br/>
+
+    <%= f.label :text_name,"教材名" %>
+    <%= f.text_field :text_name%><br />
+
+    <%= f.label :starts_at, "開始時間"%>
+    <%= f.datetime_select :starts_at %><br />
+
+    <%= f.label :ends_at, "終了時間" %>
+    <%= f.datetime_select	 :ends_at %><br />
+
+    <%= f.label :homework, "宿題" %>
+    <%= f.text_area :homework %><br />
+
+    <%= f.label :feedback, "講師コメント"%>
+    <%= f.text_area :feedback %><br />
+
+
+    <%= f.label :notice,"授業予告" %>
+    <%= f.text_area :notice%><br />
+
+   <%= f.submit "登録する"%>
+
+<% end %>

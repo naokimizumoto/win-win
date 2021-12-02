@@ -1,0 +1,8 @@
+<%=@textbooks.each do |textbook| %>
+<%= textbook.name%>
+
+<%= link_to teachers_textbook_student_path(textbook.id) do %>
+<%= attacement_image_tag textbook, :image %>
+<% end %>
+
+<%= end %>
