@@ -5,7 +5,7 @@ class Teachers::StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-    @textbooks = @student.textbook_students
+    @textbook_student = @
   end
 
   def new
