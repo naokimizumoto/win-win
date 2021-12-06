@@ -21,12 +21,23 @@ class Teachers::LessonsController < ApplicationController
   end
 
   def edit
+    @lesson = Lesson.find(params[:id])
+
   end
 
   def update
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update(lesson_params)
+      redirect_to teachers_lesson_path(@lesson.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @lesson = Lesson.find(params[:id])
+    @lesson.destroy
+    redirect_to teachers_lessons_path
   end
 
   private

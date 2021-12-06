@@ -1,0 +1,10 @@
+<%= form_with model:@textbook, url:teachers_textbooks_path, local:true do |f|%>
+<%= f.label :name, "教材名"%>
+<%= f.text_field :name%>
+
+<%= f.label :image, "教材画像"%>
+<%= f.file_field :image%>
+
+<%= f.submit "登録"%>
+
+<% end %>

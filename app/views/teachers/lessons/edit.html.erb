@@ -1,7 +1,5 @@
-<h3>授業新規登録</h3>
-  <%= form_with model: @lesson,url: teachers_lessons_path,local: true do |f|%>
-
-    <%= f.label :teacher_id, "講師名" %>
+<%= form_with model:@lesson,url: teachers_lesson_path(@lesson.id), local: true do |f|%>
+ <%= f.label :teacher_id, "講師名" %>
      <%= f.collection_select(:teacher_id, Teacher.all, :id, :name ) %>
 
 
@@ -29,5 +27,6 @@
     <%= f.text_area :notice%><br />
 
    <%= f.submit "登録する"%>
+
 
 <% end %>

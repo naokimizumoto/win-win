@@ -1,28 +1,24 @@
 class Teachers::TextbookStudentsController < ApplicationController
 
   def new
-    @textbook = Textbook.new
+    @textbook_student = TextbookStudent.new
   end
 
   def create
-    @textbook = Textbook.new(textbook_params)
-    if @textbook.save
-      redirect_to  teachers_textbook_student_path(@textbook.id)
+    @textbook_student = TextbookStudent.new(textbook_student_params)
+    if @textbook_student.save
+      redirect_to  teachers_textbook_student_path(@textbook_student.id)
     else
       render :new
     end
   end
 
-  def index
-
-  end
-
   def show
-    @textbook = Textbook.find(params[:id])
+    @textbook_student = TextbookStudent.find(params[:id])
   end
 end
 
 private
-def textbook_params
-  params.require(:textbook).permit(:name, :image)
+def textbook_student_params
+  params.require(:textbook_student).permit(:student_id,:textbook_id)
 end

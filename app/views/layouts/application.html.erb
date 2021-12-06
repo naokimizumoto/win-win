@@ -12,34 +12,34 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
       <% if teacher_signed_in? %>
-        <ul class="navbar-nav ml-auto">
-        <li>
-          <%= link_to "授業一覧", teachers_lessons_path %>
+        <ul class="nav justify-content-center">
+        <li  class="nav-item">
+          <%= link_to "授業一覧", teachers_lessons_path ,class: "nav-link active"  %>
         </li>
-        <li>
-          <%= link_to "生徒一覧", teachers_students_path %>
+        <li class="nav-item">
+          <%= link_to "生徒一覧", teachers_students_path,class: "nav-link active"  %>
         </li>
-        <li>
-          <%= link_to "ログアウト", destroy_teacher_session_path, method: :delete %>
+        <li class="nav-item">
+          <%= link_to "ログアウト", destroy_teacher_session_path, method: :delete,class: "nav-link active"  %>
         </li>
         </ul>
 
        <% elsif student_signed_in? %>
-         <ul class="navbar-nav ml-auto">
-           <li>
-             <%= link_to "授業一覧", students_lessons_path %>
+         <ul  class="nav justify-content-center">
+           <li class="nav-item">
+             <%= link_to "授業一覧", students_lessons_path, class: "nav-link active" %>
            </li>
-           <li>
-             <%= link_to "教材一覧", students_textbooks_path %>
+           <li  class="nav-item">
+             <%= link_to "教材一覧", students_textbooks_path, class: "nav-link active"  %>
            </li>
-           <li>
-             <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+           <li class="nav-item">
+             <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "nav-link active"  %>
            </li>
          </ul>
        <% else %>
@@ -51,6 +51,7 @@
        <% end %>
       </nav>
     </header>
-
+ <%= yield %>
+ <footer></footer>
   </body>
 </html>

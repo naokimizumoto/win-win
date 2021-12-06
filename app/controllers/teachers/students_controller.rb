@@ -5,7 +5,7 @@ class Teachers::StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-    @textbook_student = @student.textbook_students
+    @textbooks = @student.textbook_students
   end
 
   def new
@@ -15,7 +15,6 @@ class Teachers::StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-
       redirect_to teachers_student_path([@student.id])
     else
       render :new

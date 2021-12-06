@@ -1,4 +1,13 @@
 <h3>生徒新規登録</h3>
+  <% if @student.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
   <%= form_with model: @student,url: teachers_students_path, local: true do |f|%>
 
   <h4>氏名</h4>

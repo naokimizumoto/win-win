@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :textbook_lessons, only: [:show]
   resources :textbook_students, only: [:show,:new,:create,:index]
   resources :students
+  resources :textbooks, only: [:new,:create]
   end
 end

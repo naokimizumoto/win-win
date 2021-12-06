@@ -1,15 +1,11 @@
-<%= form_with model:@textbook, url:teachers_textbook_students_path, local:true do |f|%>
-<%= f.label :name, "教材名"%>
-<%= f.text_field :name%>
+<%= form_with model:@textbook_student, url:teachers_textbook_students_path, local:true do |f|%>
 
-<%= f.label :image, "教材画像"%>
-<%= f.file_field :image%>
 
 <%= f.label :student_id, "生徒名"%>
 <%= f.collection_select(:student_id, Student.all, :id, :name)%>
 
-<%= f.label :teacher_id, "講師名"%>
-<%= f.collection_select(:teacher_id, Teacher.all, :id, :name)%>
+<%= f.label :name, "教材名"%>
+<%= f.collection_select(:textbook_id, Textbook.all, :id, :name)%>
 
 <%= f.submit "登録"%>
 
