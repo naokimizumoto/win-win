@@ -1,6 +1,6 @@
 class Students::TextbooksController < ApplicationController
   def index
-  @textbooks = Textbook.all
+  @textbooks = Textbook.page(params[:page]).reverse_order
   end
 
   def show

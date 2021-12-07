@@ -4,7 +4,10 @@ class Teachers::LessonsController < ApplicationController
   end
 
   def show
-    @lesson = Lesson.find(params[:id])
+     @lesson = Lesson.find(params[:id])
+     if student_signed_in?
+       redirect_to students_lesson_path(@lesson.id)
+     end
   end
 
   def new

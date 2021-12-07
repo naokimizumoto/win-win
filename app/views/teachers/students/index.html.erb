@@ -5,7 +5,7 @@
 <h3>生徒一覧</h3>
   <% @students.each do |student| %>
   <h4>生徒番号</h4>
-  <% student.number%>
+  <%= student.number%>
 
   <h4>生徒名</h4>
    <%= link_to student.name, teachers_student_path(student.id)%>

@@ -7,5 +7,9 @@ json.array!(@lessons) do |lesson|
   else
     json.title 'no name'
   end
+   if student_signed_in?
+  json.url students_lesson_path(lesson.id)
+  else
   json.url teachers_lesson_path(lesson.id)
+  end
 end
