@@ -8,7 +8,7 @@
 
 
 <% @textbooks.each do |textbook_student|%>
-<%= attachment_image_tag textbook_student.textbook, :image %>
+<%= attachment_image_tag textbook_student.textbook, :image, size: "100x100" %>
 <% end %>
 
 <%= link_to "編集する", edit_teachers_student_path(@student.id) %>

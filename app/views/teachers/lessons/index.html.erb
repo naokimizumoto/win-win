@@ -1,11 +1,2 @@
 <%= link_to "新規登録", new_teachers_lesson_path %>
-<div id="calendar"></div>
-<% @lessons.each do |lesson|%>
-<%=lesson.teacher_id%>
-<%= lesson.student_id%>
-<%= lesson.starts_at %>
-<%= lesson.ends_at %>
-
-<% end %>
-
-
+<div id="calendar_teacher"></div>

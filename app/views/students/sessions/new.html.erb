@@ -1,34 +1,39 @@
-<h2>Log in</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+     <h1>ログイン</h1>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= form_with model:@student,url:student_session_path, local:true do |f| %>
+      <div class="form-group ">
+       <strong> <%= f.label :名前 %></strong><br />
+        <%= f.text_field :name,:placeholder => "漢字入力",:size => "30x10" %>
+      </div>
+
+      <div class="form-group">
+        <strong>  <%= f.label :生徒番号 %> <strong> <br />
+        <%= f.text_field :number, :placeholder =>"4桁の生徒番号を入力",:size => "30x10" %>
+      </div>
+
+      <div class="form-group">
+        <strong>  <%= f.label :メールアドレス %> <strong> <br />
+        <%= f.email_field :email,:placeholder =>"@を含むアドレスを入力",:size => "30x10" %>
+      </div>
+
+      <div class="form-group">
+        <strong>  <%= f.label :パスワード%> <strong> <br />
+        <%= f.password_field :password, :placeholder =>"半角英数字8桁で入力",:size => "30x10" %>
+      </div>
+
+      <div class="form-group">
+         <strong> <%= f.label :パスワード（確認用） %> <strong> <br />
+        <%= f.password_field :password_confirmation, :placeholder => "半角英数字8桁で入力",:size => "30x10"%>
+      </div>
+
+      <div class="form-group">
+        <strong>  <%= f.submit "ログインして進む" , class:"btn btn-warning",:size => "40x10" %> <strong>
+      </div>
+    <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :number %><br />
-    <%= f.text_field :number%>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autofocus: true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "ログインする" %>
-  </div>
-<% end %>
-
-<%= render "students/shared/links" %>
+</div>

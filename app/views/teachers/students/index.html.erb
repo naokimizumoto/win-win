@@ -10,3 +10,5 @@
   <h4>生徒名</h4>
    <%= link_to student.name, teachers_student_path(student.id)%>
 <% end %>
+
+<%= paginate @students%>

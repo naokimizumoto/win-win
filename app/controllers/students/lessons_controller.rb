@@ -1,6 +1,6 @@
 class Students::LessonsController < ApplicationController
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.where(student_id: current_student.id)
   end
 
   def show

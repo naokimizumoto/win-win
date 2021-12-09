@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_02_100736) do
+ActiveRecord::Schema.define(version: 2021_12_07_065027) do
 
   create_table "lessons", force: :cascade do |t|
     t.integer "student_id"
@@ -54,13 +54,6 @@ ActiveRecord::Schema.define(version: 2021_12_02_100736) do
     t.index ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
   end
 
-  create_table "textbook_lessons", force: :cascade do |t|
-    t.integer "lesson_id"
-    t.integer "textbook_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "textbook_students", force: :cascade do |t|
     t.integer "textbook_id"
     t.integer "student_id"
@@ -73,8 +66,4 @@ ActiveRecord::Schema.define(version: 2021_12_02_100736) do
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "student_id"
-    t.integer "teacher_id"
   end
-
-end

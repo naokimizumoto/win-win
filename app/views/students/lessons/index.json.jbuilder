@@ -1,6 +1,15 @@
-json.array!(@events) do |event|
-  json.extract! event, :id, :title, :body
-  json.start event.start_date
-  json.end event.end_date
-  json.url event_url(event, format: :html)
+json.array!(@lessons) do |lesson|
+  json.extract! lesson, :id
+  json.start lesson.starts_at
+  json.end lesson.ends_at
+  if lesson.student.present?
+    json.title lesson.student.name
+  else
+    json.title 'no name'
+  end
+   if student_signed_in?
+  json.url students_lesson_path(lesson.id)
+  else
+  json.url teachers_lesson_path(lesson.id)
+  end
 end

@@ -1,6 +1,6 @@
 class Teachers::StudentsController < ApplicationController
   def index
-    @students = Student.all
+    @students = Student.page(params[:page]).reverse_order
   end
 
   def show
