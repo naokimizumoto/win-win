@@ -20,17 +20,35 @@
 }
 
 .box-1 {
-  height: 1000px;
-  width: 1500px;
+  height: 100%;
+  background-color: red;
 }
 
 .display-1{
   text-align: center;
 }
 
-.box-2{
- text-align: center;
-}
 .text{
   text-align: center;
+}
+
+.contents{
+    display: flex;
+
+
+}
+.item1{
+    height: 300px;
+    width: 300px;
+    margin-bottom: 30px;
+    padding: 50px 10px;
+    text-align: center;
+}
+
+.item12{
+    height: 300px;
+    width: 300px;
+    margin-bottom: 30px;
+    padding: 50px 10px;
+    text-align: center;
 }

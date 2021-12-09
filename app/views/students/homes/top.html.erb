@@ -1,10 +1,13 @@
   <% if student_signed_in? %>
-    <div class="box-1">
-      <p class="display-1">
-        <%= link_to "授業一覧", students_lessons_path  ,class:"btn btn-primary "%>
-        <%= link_to "教材一覧", students_textbooks_path, class:"btn btn-primary" %>
-        </p>
+    <div class="contents">
+      <div class="item1">
+        <%= link_to "授業一覧", students_lessons_path %>
+      </div>
+      <div class="item2">
+        <%= link_to "教材一覧", students_textbooks_path%>
+       </div>
     </div>
+
   <% else %>
   <div class="box-1">
     <p class="display-1">
