@@ -19,9 +19,15 @@
   margin:0; padding:0;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .box-1 {
   height: 100%;
-  background-color: red;
+  background-color: #CCFFFF;
 }
 
 .display-1{
@@ -30,25 +36,40 @@
 
 .text{
   text-align: center;
+  font-size: 50px
 }
 
 .contents{
     display: flex;
+    flex-wrap: wrap;
 
 
 }
 .item1{
     height: 300px;
-    width: 300px;
-    margin-bottom: 30px;
+    width: 500px;
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 100px;
     padding: 50px 10px;
     text-align: center;
+    background-color: #CCFFFF;
+    border: 5px double ;
 }
 
-.item12{
+.item2{
     height: 300px;
-    width: 300px;
-    margin-bottom: 30px;
+    width: 500px;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 200px;
     padding: 50px 10px;
     text-align: center;
+    background-color: #CCFFFF	;
+    border: 5px double ;
+}
+
+.image{
+  margin:0 auto;
+  width: 80%;
 }
