@@ -18,32 +18,25 @@
 * {
   margin:0; padding:0;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 .box-1 {
   height: 100%;
   background-color: #CCFFFF;
 }
-
 .display-1{
   text-align: center;
 }
-
 .text{
   text-align: center;
   font-size: 50px
 }
-
 .contents{
     display: flex;
     flex-wrap: wrap;
-
-
 }
 .item1{
     height: 300px;
@@ -68,8 +61,60 @@
     background-color: #CCFFFF	;
     border: 5px double ;
 }
-
 .image{
   margin:0 auto;
   width: 80%;
 }
+.split{
+    display: table;
+    width: 100%;
+}
+.split-item{
+    display: table-cell;
+    padding: 80px;
+    width: 50%;
+}
+.split-left{
+    background: #CCFFFF	;
+    color: black ;
+    position: relative;
+    text-align: center;
+}
+.split-left__inner{
+    height: 100%;
+    width: 50%;
+
+}
+.student-box{
+  border: 1rem solid #3399FF;
+  margin-top: 20px;
+}
+.split-right__inner{
+  height: 8000px;
+}
+.register{
+  text-align: center;
+  margin: 100px;
+  textsize: 30px;
+  border: 1rem solid #3399FF;
+}
+.register-text{
+  font-size: 30px;
+}
+
+.student-register{
+  text-align: center;
+}
+.block{
+  display: inline-block;
+  margin-top: 20px;
+  width: 250px;
+  text-align: right;
+  background-color: #CCFFFF;
+}
+.text1{
+  font-size: 50px;
+  color: green;
+}
+
+

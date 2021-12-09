@@ -1,14 +1,36 @@
-<%= link_to "生徒新規登録", new_teachers_student_path %>
-<%= link_to "生徒教材の新規登録", new_teachers_textbook_student_path%>
-<%= link_to "教材の新規登録", new_teachers_textbook_path%>
+<div class="split">
+  <div class="split-item split-left">
+    <div class="split-left__inner">
+      <h1>生徒一覧</h1>
+        <% @students.each do |student| %>
+          <div class="student-box">
+            <p>生徒番号</p>
+              <%= student.number%>
+            <p>生徒名</p>
+              <%= link_to student.name, teachers_student_path(student.id)%>
+          </div>
+        <% end %>
+        <%= paginate @students%>
+    </div>
+  </div>
 
-<h3>生徒一覧</h3>
-  <% @students.each do |student| %>
-  <h4>生徒番号</h4>
-  <%= student.number%>
-
-  <h4>生徒名</h4>
-   <%= link_to student.name, teachers_student_path(student.id)%>
-<% end %>
-
-<%= paginate @students%>
+    <div class="split-item split-right">
+      <div class="split-right__inner">
+        <div class="register">
+          <p class="register-text">
+            <%= link_to "生徒新規登録", new_teachers_student_path %>
+          </p>
+        </div>
+        <div class="register">
+          <p class="register-text">
+            <%= link_to "生徒教材の新規登録", new_teachers_textbook_student_path%>
+          </p>
+        </div>
+        <div class="register">
+          <p class="register-text">
+            <%= link_to "教材の新規登録", new_teachers_textbook_path%>
+          </p>
+        </div>
+     </div>
+   </div>
+</div>
