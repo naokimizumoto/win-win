@@ -6,6 +6,7 @@ class Teachers::StudentsController < ApplicationController
   def show
     @student = Student.find(params[:id])
     @textbooks = @student.textbook_students
+    # binding.irb
   end
 
   def new

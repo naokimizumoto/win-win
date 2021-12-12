@@ -23,16 +23,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-color: #EEFFFF;
+}
 .box-1 {
   height: 100%;
-  background-color: #CCFFFF;
+  background-color: #AAFFFF;
 }
 .display-1{
   text-align: center;
 }
 .text{
   text-align: center;
-  font-size: 50px
+  font-size: 50px;
+}
+.value{
+  text-color: green;
 }
 .contents{
     display: flex;
@@ -46,7 +52,7 @@
     margin-right: 100px;
     padding: 50px 10px;
     text-align: center;
-    background-color: #CCFFFF;
+    background-color:#AAFFFF;
     border: 5px double ;
 }
 
@@ -58,7 +64,7 @@
     margin-right: 200px;
     padding: 50px 10px;
     text-align: center;
-    background-color: #CCFFFF	;
+    background-color: #AAFFFF	;
     border: 5px double ;
 }
 .image{
@@ -75,7 +81,7 @@
     width: 50%;
 }
 .split-left{
-    background: #CCFFFF	;
+    background: #AAFFFF	;
     color: black ;
     position: relative;
     text-align: center;
@@ -83,23 +89,30 @@
 .split-left__inner{
     height: 100%;
     width: 50%;
-
+    font-size: 50px;
+    margin-left: 200px;
+    margin-top: 50px;
+    // margin: 50px 0 0 200px;
+}
+.split-right{
+   background: #AAFFFF;
+}
+.split-right__inner{
+  font-size: 50px;
 }
 .student-box{
   border: 1rem solid #3399FF;
   margin-top: 20px;
 }
-.split-right__inner{
-  height: 8000px;
-}
 .register{
   text-align: center;
   margin: 100px;
   textsize: 30px;
-  border: 1rem solid #3399FF;
+
 }
 .register-text{
   font-size: 30px;
+  background-color: white;
 }
 
 .student-register{
@@ -110,11 +123,46 @@
   margin-top: 20px;
   width: 250px;
   text-align: right;
-  background-color: #CCFFFF;
+  background-color:#AAFFFF;
 }
 .text1{
   font-size: 50px;
   color: green;
 }
+.student-detail{
+  border: solid #3399FF;
+  background-color: #AAFFFF;
+  margin: 50px 100px;
+  text-align: center;
+}
+.block-student{
+  display:　block;
+  text-align: left;
+}
+// .student-edit{
+//   text-align: center;
+// }
+// .textbook_student-register{
+//   text-align: center;
+// }
+.block-textbook_student{
+  margin: 10px 100px;
+}
+.image_textbook_student{
+  margin-top: 100px;
+  margin-left: 300px;
+  margin-bottom: 200px;
+  margin-right: 200px;
+}
+
+.student-edit,
+.textbook_student-register,
+.teacher-session {
+  text-align: center;
+}
 
 
+
+// .text-center {
+//   text-align: center;
+// }

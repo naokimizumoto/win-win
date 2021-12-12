@@ -1,10 +1,25 @@
-<%= form_with model:@textbook, url:teachers_textbooks_path, local:true do |f|%>
-<%= f.label :name, "教材名"%>
-<%= f.text_field :name%>
+<div class="student-register">
+   <h1>生徒教材の新規登録</h1>
+      <% if @textbook.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+          <% @textbook.errors.full_messages.each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+    <%= form_with model:@textbook, url:teachers_students_path, local:true do |f|%>
 
-<%= f.label :image, "教材画像"%>
-<%= f.file_field :image%>
+      <h2 class="block">教材名</h2>
+         <%= f.text_field :name%><br>
+      <h2 class="block">教材画像</h2>
+         <%= f.file_field :image%><br>
 
-<%= f.submit "登録"%>
-
-<% end %>
+      <h2 class="text1">
+          <%= f.submit "新規登録"%>
+      </h2>
+  　 <% end %>
+  </div>

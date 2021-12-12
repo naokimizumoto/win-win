@@ -1,15 +1,28 @@
 
+  <div class="student-detail">
+    <div class="detail">
+      <p class="text"></p>
+      <div class="block-student">
+        <h2>生徒名</h2>
+       <strong class="text"><%= @student.name%></strong>
+      </div>
+      <div class="block-student">
+        <h2>ふりがな</h2>
+        <strong class="text"><%= @student.name_kana%></strong>
+      </div>
+      <div class="block-student">
+        <h2>生徒番号</h2>
+        <strong class="text"><%= @student.number%></strong>
+      </div>
+      <div class="block-student-textbook">
+        <% @textbooks.each do |textbook|%>
+        <%=link_to root_path do %>
+        <%= attachment_image_tag textbook.textbook, :image, size: "100x100" %>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-<ul>
-  <li><%= @student.name%></li>
-  <li><%= @student.name_kana%></li>
-  <li><%= @student.number%></li>
-</ul>
-
-
-<% @textbooks.each do |textbook_student|%>
-<%= attachment_image_tag textbook_student.textbook, :image, size: "100x100" %>
-<% end %>
-
-<%= link_to "編集する", edit_teachers_student_path(@student.id) %>
-<%= link_to "削除する", teachers_student_path(@student.id),method: :delete, "data-confirm" => "本当に削除しますか"%>
+        <%= link_to "編集する", edit_teachers_student_path(@student.id) %>
+        <%= link_to "削除する", teachers_student_path(@student.id),method: :delete, "data-confirm" => "本当に削除しますか"%>
