@@ -5,4 +5,5 @@ class Teacher < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :lessons
   has_many :textbook_students
+
 end

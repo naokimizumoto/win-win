@@ -1,32 +1,35 @@
-<%= form_with model:@lesson,url: teachers_lesson_path(@lesson.id), local: true do |f|%>
- <%= f.label :teacher_id, "講師名" %>
-     <%= f.collection_select(:teacher_id, Teacher.all, :id, :name ) %>
-
-
-    <%= f.label :student_id, "生徒名" %>
-    <%= f.collection_select(:student_id, Student.all, :id, :name ) %>
-
-
-    <%= f.label :text_name,"教材名" %>
-    <%= f.text_field :text_name%><br />
-
-    <%= f.label :starts_at, "開始時間"%>
-    <%= f.datetime_select :starts_at %><br />
-
-    <%= f.label :ends_at, "終了時間" %>
-    <%= f.datetime_select	 :ends_at %><br />
-
-    <%= f.label :homework, "宿題" %>
-    <%= f.text_area :homework %><br />
-
-    <%= f.label :feedback, "講師コメント"%>
-    <%= f.text_area :feedback %><br />
-
-
-    <%= f.label :notice,"授業予告" %>
-    <%= f.text_area :notice%><br />
-
-   <%= f.submit "登録する"%>
-
-
-<% end %>
+<div class="lesson">
+  <h3>授業新規登録</h3>
+  <% if @lesson.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+          <% @lesson.errors.full_messages.each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+  <%= form_with model:@lesson,url: teachers_lesson_path(@lesson.id), local: true do |f|%>
+    <h2 class="block">講師氏名</h2>
+      <%= f.collection_select(:teacher_id, Teacher.all, :id, :name ) %><br>
+    <h2 class="block">生徒氏名</h2>
+      <%= f.collection_select(:student_id, Student.all, :id, :name ) %></br>
+    <h2 class="block">教材名</h2>
+      <%= f.text_field :text_name%><br />
+    <h2 class="block">開始時間</h2>
+      <%= f.datetime_select :starts_at %><br />
+    <h2 class="block">終了時間</h2>
+      <%= f.datetime_select	 :ends_at %><br />
+    <h2 class="block">宿題</h2>
+      <%= f.text_area :homework %><br />
+    <h2 class="block">講師コメント</h2>
+      <%= f.text_area :feedback %><br />
+    <h2 class="block">授業予告</h2>
+      <%= f.text_area :notice%><br />
+    <div class="text">
+       <%= f.submit "登録する"%>
+    </div>
+  <% end %>
+  </div>

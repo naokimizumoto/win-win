@@ -1,10 +1,12 @@
-<ul>
-  <li><%=@lesson.teacher_id %></li>
-  <li><%=@lesson.student_id %></li>
-  <li><%=@lesson.starts_at %></li>
-  <li><%=@lesson.ends_at %></li>
-  <li><%=@lesson.homework %></li>
-  <li><%=@lesson.notice %></li>
-  <li><%=@lesson.feedback %></li>
-  <li><%=@lesson.text_name%></li>
-</ul>
+  <div class="lesson-show">
+  <ul>
+    <li><h2>講師氏名</h2><%=@lesson.teacher.name %></li>
+    <li><h2>生徒氏名</h2><%=@lesson.student.name %></li>
+    <li><h2>教材名</h2><%=@lesson.text_name%></li>
+    <li><h2>開始時間</h2><%=@lesson.starts_at %></li>
+    <li><h2>終了時間</h2><%=@lesson.ends_at %></li>
+    <li><h2>宿題</h2><%=@lesson.homework %></li>
+    <li><h2>授業予告</h2><%=@lesson.notice %></li>
+    <li><h2>授業の振り返り</h2><%=@lesson.feedback %></li>
+  </ul>
+</div>

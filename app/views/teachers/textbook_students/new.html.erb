@@ -13,18 +13,18 @@
       <% end %>
    <%= form_with model:@textbook_student, url:teachers_textbook_students_path, local:true do |f|%>
 
-      <div class="block-textbook_student">
+
         <p class="select">
           <%= f.label :student_id, "生徒名"%>
           <%= f.collection_select(:student_id, Student.all, :id, :name)%>
         </p>
-      </div>
-      <div class="block-textbook_student">
+
+
         <p class="select">
           <%= f.label :name, "教材名"%>
           <%= f.collection_select(:textbook_id, Textbook.all, :id, :name)%>
         </p>
-      </div>
+
       <h2 class="text1">
 
           <%= f.submit "新規登録"%>

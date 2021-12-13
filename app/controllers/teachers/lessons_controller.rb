@@ -16,7 +16,7 @@ class Teachers::LessonsController < ApplicationController
 
   def create
     @lesson = Lesson.new(lesson_params)
-    if @lesson.save!
+    if @lesson.save
      redirect_to teachers_lesson_path(@lesson.id)
     else
      render :new
