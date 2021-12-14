@@ -11,7 +11,7 @@
         </ul>
       </div>
       <% end %>
-    <%= form_with model:@textbook, url:teachers_textbooks_path, local:true do |f|%>
+    <%= form_with model:@textbook, url: teachers_students_path, local:true do |f|%>
 
       <h2 class="block">教材名</h2>
          <%= f.text_field :name%><br>

@@ -15,22 +15,26 @@
 
 
   <header>
-    <div class="container">
+
      <% if teacher_signed_in? %>
-      <ul class="nav">
-        <li class="nav-item">
-          <%=link_to "WIN-WIN", root_path,class:"fa-solid fa-book"%>
-        </li>
-        <li  class="nav-item">
-          <%= link_to "授業一覧", teachers_lessons_path ,class: "nav-link active" ,class:"btn btn-primary" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "生徒一覧", teachers_students_path,class: "nav-link active" ,class:"btn btn-primary" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "ログアウト", destroy_teacher_session_path, method: :delete,class: "nav-link active" ,class:"btn btn-primary" %>
-        </li>
+      <div class="container">
+      <div style="display: flex;">
+        <div style="flex:7">
+          <%=link_to "WIN-WIN", root_path, class:"fas fa-book"%>
+        </div>
+
+        <ul style="flex:3; display: flex;">
+          <li  class="nav-item">
+            <%= link_to "授業一覧", teachers_lessons_path ,class: "nav-link active" ,class:"btn btn-primary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "生徒一覧", teachers_students_path,class: "nav-link active" ,class:"btn btn-primary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログアウト", destroy_teacher_session_path, method: :delete,class: "nav-link active" ,class:"btn btn-primary" %>
+          </li>
         </ul>
+      </div>
 
        <% elsif student_signed_in? %>
          <ul  class="nav">
@@ -49,6 +53,7 @@
          </ul>
        <% end %>
         </div>
+
     </header>
 
  <%= yield %>

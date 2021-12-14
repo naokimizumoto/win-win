@@ -1,0 +1,27 @@
+ja:
+  activerecord:
+    models:
+      # view側： User.model_name.human => "ユーザ" / t("activerecord.models.user")と同じ
+      student: 生徒
+      textbook: 教材
+      lesson: 授業
+
+    attributes:
+      student:
+        name: 氏名
+        name_kana: 氏名かな
+          # view側： User.human_attribute_name :name => "名前" / t("activerecord.attributes.user.name")と同じ
+        number: 生徒番号
+        email: メールアドレス
+        password: パスワード
+      textbook:
+        name: 教材名
+        image_id: 教材画像
+      lesson:
+        homework: 宿題
+        notice: 授業予告
+
+  # 全てのmodelで共通して使用するattributesを定義
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日

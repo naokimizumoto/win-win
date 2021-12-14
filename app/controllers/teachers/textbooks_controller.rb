@@ -1,4 +1,5 @@
 class Teachers::TextbooksController < ApplicationController
+
   def new
     @textbook = Textbook.new
   end
@@ -9,6 +10,9 @@ class Teachers::TextbooksController < ApplicationController
       redirect_to teachers_students_path
     else
       render :new
+    end
+    def index
+      @textbooks = Textbook.all
     end
   end
 
