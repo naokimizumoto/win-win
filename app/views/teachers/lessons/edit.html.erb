@@ -1,5 +1,5 @@
 <div class="lesson">
-  <h3>授業新規登録</h3>
+  <h3>授業編集画面</h3>
   <% if @lesson.errors.any? %>
       <div id="error_explanation" class="alert alert-danger">
         <ul>
@@ -29,7 +29,7 @@
     <h2 class="block">授業予告</h2>
       <%= f.text_area :notice%><br />
     <div class="text">
-       <%= f.submit "登録する"%>
+       <%= f.submit "編集する"%>
     </div>
   <% end %>
   </div>
