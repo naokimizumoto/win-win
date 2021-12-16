@@ -11,12 +11,12 @@
         </ul>
       </div>
       <% end %>
-    <%= form_with model:@textbook, url: teachers_students_path, local:true do |f|%>
+    <%= form_with model:@textbook, url: teachers_textbooks_path, local:true do |f|%>
 
       <h2 class="block">教材名</h2>
          <%= f.text_field :name%><br>
       <h2 class="block">教材画像</h2>
-         <%= f.file_field :image%><br>
+         <%= f.attachment_field :image%><br>
 
       <h2 class="text1">
           <%= f.submit "新規登録"%>

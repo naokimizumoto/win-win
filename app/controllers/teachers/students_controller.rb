@@ -1,12 +1,12 @@
 class Teachers::StudentsController < ApplicationController
   def index
-    @students = Student.page(params[:page]).reverse_order
+    @students = Student.page(params[:page]).per(3)
   end
 
   def show
     @student = Student.find(params[:id])
     @textbooks = @student.textbook_students
-    # binding.irb
+    #binding.irb
   end
 
   def new

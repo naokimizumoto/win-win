@@ -11,9 +11,7 @@ class Teachers::TextbooksController < ApplicationController
     else
       render :new
     end
-    def index
-      @textbooks = Textbook.all
-    end
+
   end
 
   private
