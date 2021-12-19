@@ -16,11 +16,9 @@ RSpec.describe 'Teacherモデルのテスト', type: :model do
         teacher.name = Faker::Lorem.characters(number: 100)
         is_expected.to eq true
       end
-      it '空欄でないこと' do
-        teacher.name = ''
-        is_expected.to eq false
-      end
+
     end
+  end
 
   describe 'アソシエーションのテスト' do
     context 'lessonモデルとの関係' do

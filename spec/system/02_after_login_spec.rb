@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe '[STEP2] 生徒ログイン後のテスト' do
   let(:student) { create(:student) }
-  let!(:other_student) { create(:student) }
+
   let!(:lesson) { create(:lesson, student: student) }
-  let!(:other_lesson) { create(:lesson, student: other_student) }
+
   let!(:textbook) { create(:textbook, student: student) }
-  let!(:other_textbook) { create(:textbook, student: other_student) }
+
 
   before do
     visit new_student_session_path
@@ -52,6 +52,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
         expect(page).to have_link lesson.starts_at, href: students_lesson_path(lesson.id)
       end
     end
+  end
 
   describe '自分の授業詳細画面のテスト' do
     before do
@@ -75,6 +76,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
         expect(page).to have_content lesson.notice
       end
     end
+  end
 
   describe '教材一覧画面のテスト' do
     before do
@@ -95,16 +97,18 @@ describe '[STEP2] 生徒ログイン後のテスト' do
         expect(page).to have_link 'textbook.image', href: students_textbook_path(textbook)
       end
     end
+  end
+end
 
-    describe '[STEP2] 講師ログイン後のテスト' do
-  let(:teacher) { create(:teacher) }
-  let!(:other_teacher) { create(:teacher) }
+describe '[STEP2] 講師ログイン後のテスト' do
+  let!(:teacher) { create(:teacher, lesson: lesson) }
+
   let!(:lesson) { create(:lesson, teacher: teacher) }
-  let!(:other_lesson) { create(:lesson, teacher: other_teacher) }
+
   let!(:student) { create(:student, teacher: teacher) }
-  let!(:other_student)
+
   let!(:textbook) { create(:textbook, teacher: teacher) }
-  let!(:other_textbook) { create(:textbook, teacher: other_teacher) }
+
 
 
   before do
@@ -154,6 +158,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
 
       it '新規登録のリンクが表示され、リンク先が正しい' do
         expect(page).to have_link '新規登録', href: new_teachers_student_path
+      end
     end
 
     context '授業新規登録成功のテスト' do
@@ -307,6 +312,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
         expect(page).to have_link '生徒教材の新規登録', href: new_teachers_textbook_student_path
       end
     end
+  end
 
   describe '生徒詳細画面のテスト' do
     before do
@@ -333,6 +339,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
         expect(page).to have_content student.number
       end
     end
+  end
 
   describe '生徒編集画面のテスト' do
     before do
@@ -357,6 +364,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
       end
     end
 
+
     context '編集更新成功のテスト' do
       before do
         @student_old_name = student.name
@@ -373,6 +381,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
       end
       it 'name_kanaが正しく更新される' do
         expect(student.reload.name_kana).not_to eq @student_old_kana
+      end
       it 'numberが正しく更新される' do
         expect(student.reload.number).not_to eq @student_old_number
       end
@@ -380,6 +389,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
         expect(current_path).to eq '/teachers/student/' + student.id.to_s
       end
     end
+  end
 
   describe '生徒教材詳細画面のテスト' do
     before do
@@ -394,6 +404,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
         expect(page).to have_field '', with: textbook_student.textbook.image
       end
     end
+  end
 
   describe '生徒新規登録画面のテスト' do
     before do
@@ -432,7 +443,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
         fill_in 'student[email]', with: Faker::Lorem.characters(number: 10)
         fill_in 'student[password]', with: Faker::Lorem.characters(number: 10)
       end
-      end
+
 
       it '生徒の新規登録が正しく保存される' do
         expect { click_button '新規登録' }.to change(teachers.students, :count).by(1)
@@ -442,8 +453,9 @@ describe '[STEP2] 生徒ログイン後のテスト' do
         expect(current_path).to eq '/teachers/students/' + Student.last.id.to_s
       end
     end
+  end
 
-   describe '教材新規登録画面のテスト' do
+  describe '教材新規登録画面のテスト' do
     before do
       visit new_teachers_textbook_path
     end
@@ -468,7 +480,7 @@ describe '[STEP2] 生徒ログイン後のテスト' do
         fill_in 'textbook[name]', with: Faker::Lorem.characters(number: 10)
         fill_in 'textbook[image]', with: Faker::Lorem.characters(number: 10)
       end
-    end
+
 
       it '教材の新規登録が正しく保存される' do
         expect { click_button '新規登録' }.to change(textbooks, :count).by(1)

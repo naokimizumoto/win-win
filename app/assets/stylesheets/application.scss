@@ -198,16 +198,48 @@ padding-left: auto;
   margin-left: auto;
 }
 
-
+  /* すべての画面サイズで適用される設定 */
+.fc-view-container{
+  width: 100%;
+  height: 100vh;
+}
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
-@media screen and (max-width: 768px) {
-  .social i {
-    color: red;
-  }
+@media screen and (max-width:768px) {
+.item1{
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+
+}
+.item2{
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.fc-view-container {
+  margin-top: 50px;
+}
+.fc-content-skeleton{
+  margin-top: 30px;
+}
+.fc-row fc-week fc-widget-content{
+  height: 50px;
+}
 }
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
-@media screen and (max-width: 425px) {
-  .social i {
-    color: blue;
-  }
+@media screen and (max-width:375px) {
+.item1{
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 70px;
+
+}
+.item2{
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+.display-1{
+  font-size: 4vh;
+}
 }

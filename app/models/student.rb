@@ -9,5 +9,5 @@ class Student < ApplicationRecord
   validates :name_kana, presence: true
   validates :number, presence: true
   validates :email, presence: true
-  validates :password, presence: true
+  #validates :password, presence: true
 end

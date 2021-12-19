@@ -4,24 +4,24 @@ RSpec.describe 'Lessonモデルのテスト', type: :model do
   describe 'バリデーションのテスト' do
     subject { lesson.valid? }
 
-    let!(:other_lesson) { create(:lesson) }
+    let!(:lesson) { create(:lesson) }
     let(:lesson) { build(:lesson) }
 
     context 'homeworkカラム' do
-      it '2文字以上であること: 2文字は〇' do
-        lesson.homework = Faker::Lorem.characters(number: 2)
-        is_expected.to eq true
+      it '1文字以上であること: 1文字は〇' do
+        lesson.homework = Faker::Lorem.characters(number: 1)
+        expect(lesson.homework.length).to be >= 1
       end
       it '100文字以下であること: 100文字は〇' do
         lesson.homework = Faker::Lorem.characters(number: 100)
-        is_expected.to eq true
+        expect(lesson.homework.length).to be <=100
       end
     end
 
     context 'notice' do
       it '100文字以下であること: 100文字は〇' do
         lesson.notice = Faker::Lorem.characters(number: 100)
-        is_expected.to eq true
+        expect(lesson.notice.length).to be <=100
       end
       it '空欄でないこと' do
         lesson.notice = ''
@@ -32,14 +32,14 @@ RSpec.describe 'Lessonモデルのテスト', type: :model do
      context 'text_name' do
       it '20文字以下であること: 20文字は〇' do
         lesson.text_name = Faker::Lorem.characters(number: 20)
-        is_expected.to eq true
+        expect(lesson.text_name.length).to be <= 20
       end
     end
 
     context 'feedback' do
       it '100文字以下であること: 100文字は〇' do
-        lesson.feedbadk = Faker::Lorem.characters(number: 100)
-        is_expected.to eq true
+        lesson.feedback = Faker::Lorem.characters(number: 100)
+        expect(lesson.feedback.length).to be <=100
       end
     end
   end

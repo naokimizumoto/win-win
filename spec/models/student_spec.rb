@@ -4,8 +4,8 @@ RSpec.describe 'Studentモデルのテスト', type: :model do
   describe 'バリデーションのテスト' do
     subject { student.valid? }
 
-    let!(:other_student) { create(:student) }
-    let(:student) { build(:student) }
+    let!(:student) { create(:student) }
+    let!(:student) { build(:student) }
 
     context 'nameカラム' do
       it '空欄でないこと' do
@@ -21,24 +21,9 @@ RSpec.describe 'Studentモデルのテスト', type: :model do
         is_expected.to eq true
       end
     end
+  end
 
-    context 'name_kana' do
-      it '20文字以下であること: 20文字は〇' do
-        student.name= Faker::Lorem.characters(number: 20)
-        is_expected.to eq true
-      end
-    end
 
-    context 'number' do
-      it '10文字以下であること: 10文字は〇' do
-        student.number = Faker::Lorem.characters(number: 10)
-        is_expected.to eq true
-      end
-      it '空欄でないこと' do
-        student.number = ''
-        is_expected.to eq false
-      end
-    end
 
   describe 'アソシエーションのテスト' do
     context 'lessonモデルとの関係' do
