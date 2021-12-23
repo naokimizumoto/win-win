@@ -30,6 +30,19 @@ header{
   background-color:#2DBAFD;
   height: 100px;
 }
+.size{
+ font-size: 3em;
+}
+.nav{
+  position: relative;
+}
+.nav-item{
+  height: 100px;
+}
+.nav-icon{
+  height: 100px;
+  margin-top: 30px;
+}
 .box-1 {
   height: 100%;
   background-color: #AAFFFF;
@@ -262,6 +275,10 @@ padding-left: auto;
 }
 .item{
   height: 200px;
-  
+
 }
+}
+
+.fc-scroller {
+  height: auto !important;
 }
