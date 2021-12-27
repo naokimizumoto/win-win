@@ -83,7 +83,7 @@ header{
     margin-right: 100px;
     padding: 50px 10px;
     text-align: center;
-    background-color:#AAFFFF;
+    background-color:#EEFFFF;
     border: 5px double ;
 }
 .itemleft{
@@ -94,7 +94,7 @@ header{
 
     padding: 100px 10px;
     text-align: center;
-    background-color:#AAFFFF;
+    background-color:#EEFFFF;
     border: 5px double ;
 }
 
@@ -106,7 +106,7 @@ header{
 
     padding: 100px 10px;
     text-align: center;
-    background-color: #AAFFFF	;
+    background-color:#EEFFFF	;
     border: 5px double ;
 }
 
@@ -117,13 +117,14 @@ header{
 .split{
     display: table;
     width: 100%;
+    background-color: #EEFFFF;
 }
 .split-item{
     display: table-cell;
     width: 50%;
 }
 .split-left{
-    background: #AAFFFF	;
+    background: #EEFFFF	;
     color: black ;
     position: relative;
     text-align: center;
@@ -137,7 +138,7 @@ header{
     // margin: 50px 0 0 200px;
 }
 .split-right{
-   background: #AAFFFF;
+   background: #EEFFFF;
 }
 .split-right__inner{
   font-size: 50px;
@@ -165,7 +166,7 @@ header{
   margin-top: 20px;
   width: 250px;
   text-align: right;
-  background-color:#AAFFFF;
+  background-color:#EEFFFF;
 }
 .text1{
   font-size: 50px;
@@ -218,13 +219,15 @@ height: 200px;
   margin-top: 20px;
   width: 250px;
   text-align: center;
-  background-color:#AAFFFF;
+  background-color:#EEFFFF;
 }
 .lesson{
   text-align: center;
 }
 .pagination {
   justify-content: center;
+  background-color:#EEFFFF;
+  align-items: center;
 }
 
 // .text-center {

@@ -1,5 +1,5 @@
 <div class="student-register">
-   <h1>Log in</h1>
+   <h1 class="fas fa-sign-in-alt">Log in</h1>
    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <h2 class="block">氏名</h2>
         <%= f.text_field :name, autofocus: true, autocomplete: "name" %><br>
