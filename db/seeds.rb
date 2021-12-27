@@ -11,7 +11,7 @@ students_array = [
   { name: '大和', name_kana: "やまと",number: '9012', email: 'c@outlook.jp', password: 'naokimizu'},
 ]
 students_array.each do |data|
-  Student.create!(name: data[:name], number: data[:number],email: data[:email], password: data[:password])
+  Student.create!(name: data[:name], name_kana: data[:name_kana], number: data[:number],email: data[:email], password: data[:password])
 end
 
 teachers_array = [
