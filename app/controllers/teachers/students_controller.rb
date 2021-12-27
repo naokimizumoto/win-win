@@ -1,6 +1,6 @@
 class Teachers::StudentsController < ApplicationController
   def index
-    @students = Student.page(params[:page]).per(3)
+    @students = Student.page(params[:page]).per(6)
   end
 
   def show

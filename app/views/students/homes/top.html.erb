@@ -1,7 +1,9 @@
   <% if student_signed_in? %>
     <div class="contents">
       <div class="itemleft">
-        <%= link_to "授業一覧", students_lessons_path, class:"fas fa-pen size" %>
+        <%= link_to students_lessons_path do %>
+          <i class="fas fa-pen size"></i>授業一覧
+        <% end %>
       </div>
       <div class="itemright">
         <%= link_to "教材一覧", students_textbooks_path, class:"fas fa-book-open size"%>
@@ -11,7 +13,7 @@
   <% else %>
   <body>
     <div class="top">
-      <p class="fas fa-school size-top">
+      <p class="size-top"><i class="fas fa-school size-top"></i>
         ようこそwin-winへ<br>
         ログインして学習を進めよう
       </p>
@@ -19,7 +21,7 @@
         <%= link_to "Log in", new_student_session_path, class:"fas fa-sign-in-alt"%>
       </p>
       <p>
-        <img src="/assets/images/carender.jpg",  size="300x300" >
+        <%= image_tag 'carender.jpg', width: '300px' %>
       </p>
     </div>
 
