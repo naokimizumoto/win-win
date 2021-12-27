@@ -6,6 +6,9 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100&family=Noto+Sans+JP:wght@100&family=Yuji+Boku&family=Yuji+Hentaigana+Akari&family=Yuji+Mai&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -18,21 +21,19 @@
   <header>
 
      <% if teacher_signed_in? %>
-      <div class="container">
-      <div style="display: flex;">
-        <div style="flex:7">
-          <%=link_to "WIN-WIN", teacher_path, class:"fas fa-book"%>
-        </div>
-
-        <ul style="flex:3; display: flex;">
+     <ul  class="nav">
+       <li class="nav-icon">
+          <%=link_to "WIN-WIN", teacher_path, class: "fas fa-book size"%>
+        </li>
+        <li class="nav-item">
           <li  class="nav-item">
-            <%= link_to "授業一覧", teachers_lessons_path ,class: "nav-link active" ,class:"btn btn-primary" %>
+            <%= link_to "授業一覧", teachers_lessons_path ,class: "nav-link active" ,class:"btn btn-primary",class: "fas fa-pen size" %>
           </li>
           <li class="nav-item">
-            <%= link_to "生徒一覧", teachers_students_path,class: "nav-link active" ,class:"btn btn-primary" %>
+            <%= link_to "生徒一覧", teachers_students_path,class: "nav-link active" ,class:"btn btn-primary", class: "fas fa-users size" %>
           </li>
           <li class="nav-item">
-            <%= link_to "ログアウト", destroy_teacher_session_path, method: :delete,class: "nav-link active" ,class:"btn btn-primary" %>
+            <%= link_to "ログアウト", destroy_teacher_session_path, method: :delete,class: "nav-link active" ,class:"btn btn-primary", class:"fas fa-sign-out-alt size" %>
           </li>
         </ul>
       </div>
@@ -43,17 +44,23 @@
              <%=link_to "WIN-WIN", root_path, class: "fas fa-book size" %>
            </li>
            <li class="nav-item">
-             <%= link_to "授業一覧", students_lessons_path, class: "nav-link active",class:"btn btn-primary"  %>
+             <%= link_to "授業一覧", students_lessons_path, class: "nav-link active",class:"btn btn-primary", class: "fas fa-pen size" %>
            </li>
            <li  class="nav-item">
-             <%= link_to "教材一覧", students_textbooks_path, class: "nav-link active",class:"btn btn-primary"   %>
+             <%= link_to "教材一覧", students_textbooks_path, class: "nav-link active",class:"btn btn-primary",class: "fas fa-book-open size"   %>
            </li>
            <li class="nav-item">
-             <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "nav-link active" ,class:"btn btn-primary"  %>
+             <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "nav-link active" ,class:"btn btn-primary", class:"fas fa-sign-out-alt size"  %>
            </li>
          </ul>
+
+       <% else %>
+       <ul  class="nav">
+           <li class="winwin">
+             <%=link_to "WIN-WIN", root_path, class: "fas fa-book size" %>
+           </li>
+        </ul>
        <% end %>
-        </div>
 
     </header>
 

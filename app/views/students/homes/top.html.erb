@@ -1,24 +1,27 @@
   <% if student_signed_in? %>
     <div class="contents">
       <div class="itemleft">
-        <%= link_to "授業一覧", students_lessons_path %>
+        <%= link_to "授業一覧", students_lessons_path, class:"fas fa-pen size" %>
       </div>
       <div class="itemright">
-        <%= link_to "教材一覧", students_textbooks_path%>
+        <%= link_to "教材一覧", students_textbooks_path, class:"fas fa-book-open size"%>
        </div>
     </div>
 
   <% else %>
-  <div class="box-1">
-    <p class="display-1">
-      ようこそWIN-WINへ<br>
-      ログインして学習を始めよう！！
-    </p>
-
-    <div class="d-grid gap-2">
+  <body>
+    <div class="top">
+      <p class="fas fa-school size-top">
+        ようこそwin-winへ<br>
+        ログインして学習を進めよう
+      </p>
       <p class="text">
-        <%= link_to "Log in", new_student_session_path,class:"btn btn-primary ", class:"display-1"%>
+        <%= link_to "Log in", new_student_session_path, class:"fas fa-sign-in-alt"%>
+      </p>
+      <p>
+        <img src="/assets/images/carender.jpg",  size="300x300" >
       </p>
     </div>
-  </div>
+
+  </body>
   <% end %>

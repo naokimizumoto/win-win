@@ -1,12 +1,12 @@
-  <div class="lesson-show">
-  <ul>
-    <li><h2>講師氏名</h2><%=@lesson.teacher.name %></li>
-    <li><h2>生徒氏名</h2><%=@lesson.student.name %></li>
-    <li><h2>教材名</h2><%=@lesson.text_name%></li>
-    <li><h2>開始時間</h2><%=@lesson.starts_at %></li>
-    <li><h2>終了時間</h2><%=@lesson.ends_at %></li>
-    <li><h2>宿題</h2><%=@lesson.homework %></li>
-    <li><h2>授業予告</h2><%=@lesson.notice %></li>
-    <li><h2>授業の振り返り</h2><%=@lesson.feedback %></li>
-  </ul>
+  <div class="lesson">
+    <ul class="lesson-show">
+      <li class="lesson-item"><h2 class="fas fa-chalkboard-teacher">講師氏名</h2><br><%=@lesson.teacher.name %></li>
+      <li class="lesson-item" ><h2 class="fas fa-user">生徒氏名</h2><br><%=@lesson.student.name %></li>
+      <li class="lesson-item"><h2 class="fas fa-book-open">教材名</h2><br><%=@lesson.text_name%></li>
+      <li class="lesson-item"><h2 class="far fa-clock">開始時間</h2><br><%=@lesson.starts_at %></li>
+      <li class="lesson-item"><h2 class="fas fa-clock">終了時間</h2><br><%=@lesson.ends_at %></li>
+      <li class="lesson-item"><h2 class="fas fa-file-alt">宿題</h2><br><%=@lesson.homework %></li>
+      <li class="lesson-item"><h2 class="fas fa-bullhorn">授業予告</h2><br><%=@lesson.notice %></li>
+      <li class="lesson-item"><h2 class="fas fa-comment-dots">授業の振り返り</h2><br><%=@lesson.feedback %></li>
+    </ul>
 </div>
