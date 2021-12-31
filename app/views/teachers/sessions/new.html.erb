@@ -1,5 +1,5 @@
 <div class="student-register">
-   <h1 class="fas fa-sign-in-alt">Log in</h1>
+   <h1 class="fas fa-sign-in-alt"> Log in</h1>
    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <h2 class="block">氏名</h2>
         <%= f.text_field :name, autofocus: true, autocomplete: "name" %><br>
@@ -13,7 +13,7 @@
            <%= f.check_box :remember_me %>
 　　　  <% end %>
       <h2 class="text1">
-          <%= f.submit "Log in"%>
+          <%= f.submit "Log In して進む",  class:"btn btn-warning",:size => "60x20"%>
       </h2>
   　 <% end %>
   </div>

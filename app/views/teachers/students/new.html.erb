@@ -1,5 +1,5 @@
  <div class="student-register">
-   <h1>生徒新規登録</h1>
+   <h1><i class="fas fa-user"></i>生徒新規登録<i class="fas fa-user"></i></h1>
       <% if @student.errors.any? %>
       <div id="error_explanation" class="alert alert-danger">
         <ul>
@@ -30,7 +30,7 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br>
       <h2 class="text1">
 
-          <%= f.submit "新規登録"%>
+          <%= f.submit "新規登録", class:"btn btn-warning size-register"%>
 
       </h2>
   　 <% end %>

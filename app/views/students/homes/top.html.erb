@@ -2,11 +2,15 @@
     <div class="contents">
       <div class="itemleft">
         <%= link_to students_lessons_path do %>
-          <i class="fas fa-pen size"></i>授業一覧
+          <i class="fas fa-pen size"></i><p class="size">授業一覧</p>
+
         <% end %>
       </div>
       <div class="itemright">
-        <%= link_to "教材一覧", students_textbooks_path, class:"fas fa-book-open size"%>
+        <%= link_to students_textbooks_path do %>
+         <i class="fas fa-book-open size"></i><p class="size">教材一覧</p>
+
+        <% end %>
        </div>
     </div>
 
@@ -21,7 +25,7 @@
         <%= link_to "Log in", new_student_session_path, class:"fas fa-sign-in-alt"%>
       </p>
       <p>
-        <%= image_tag 'carender.jpg', width: '300px' %>
+        <%= image_tag 'study.jpg', size: "700x500" %>
       </p>
     </div>
 

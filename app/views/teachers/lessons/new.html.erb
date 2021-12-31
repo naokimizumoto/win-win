@@ -1,5 +1,5 @@
 <div class="lesson">
-  <h3>授業新規登録</h3>
+  <h3 class="text-success">◆授業新規登録◆</h3>
   <% if @lesson.errors.any? %>
       <div id="error_explanation" class="alert alert-danger">
         <ul>
@@ -12,24 +12,24 @@
       </div>
   <% end %>
   <%= form_with model: @lesson,url: teachers_lessons_path,local: true do |f|%>
-    <h2 class="block">講師氏名</h2>
-      <%= f.collection_select(:teacher_id, Teacher.all, :id, :name ) %><br>
-    <h2 class="block">生徒氏名</h2>
+    <h2 class="block fas fa-user">講師氏名</h2>
+      <%= f.collection_select(:teacher_id, Teacher.all, :id, :name) %><br>
+    <h2 class="block fas fa-user">生徒氏名</h2>
       <%= f.collection_select(:student_id, Student.all, :id, :name ) %></br>
-    <h2 class="block">教材名</h2>
+    <h2 class="block fas fa-book-open">教材名</h2>
       <%= f.text_field :text_name%><br />
-    <h2 class="block">開始時間</h2>
+    <h2 class="block fas fa-clock">開始時間</h2>
       <%= f.datetime_select :starts_at %><br />
-    <h2 class="block">終了時間</h2>
+    <h2 class="block fas fa-clock">終了時間</h2>
       <%= f.datetime_select	 :ends_at %><br />
-    <h2 class="block">宿題</h2>
+    <h2 class="block fas fa-pen">宿題</h2>
       <%= f.text_area :homework %><br />
-    <h2 class="block">講師コメント</h2>
+    <h2 class="block fas fa-comment-dots">講師コメント</h2>
       <%= f.text_area :feedback %><br />
-    <h2 class="block">授業予告</h2>
+    <h2 class="block fas fa-bullhorn">授業予告</h2>
       <%= f.text_area :notice%><br />
     <div class="text">
-       <%= f.submit "登録する"%>
+       <%= f.submit "登録する",  class:"btn btn-warning"%>
     </div>
    <% end %>
 </div>

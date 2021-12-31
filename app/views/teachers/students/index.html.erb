@@ -1,36 +1,37 @@
-<div class="split">
-  <div class="split-item split-left">
-    <div class="split-left__inner">
-      <h1>生徒一覧</h1>
-        <% @students.each do |student| %>
-          <div class="student-box">
-            <p>生徒番号</p>
-              <%= student.number%>
-            <p>生徒名</p>
-              <%= link_to student.name, teachers_student_path(student.id)%>
-          </div>
-        <% end %>
-        <%= paginate @students%>
-    </div>
-  </div>
+<div class="container-fluid">
+ <div class="row">
 
-    <div class="split-item split-right">
-      <div class="split-right__inner">
-        <div class="register">
-          <p class="register-text">
-            <%= link_to "生徒新規登録", new_teachers_student_path %>
-          </p>
-        </div>
-        <div class="register">
-          <p class="register-text">
-            <%= link_to "生徒教材の新規登録", new_teachers_textbook_student_path%>
-          </p>
-        </div>
-        <div class="register">
-          <p class="register-text">
-            <%= link_to "教材の新規登録", new_teachers_textbook_path%>
-          </p>
-        </div>
+   <div class="col-xl-3 left">
+     <div class="new-register">
+       <%= link_to "生徒新規登録", new_teachers_student_path, class: "btn btn-primary fas fa-user size" %>
+     </div>
+     <div class="new-register">
+       <%= link_to "生徒教材の登録", new_teachers_textbook_student_path, class: "btn btn-primary fas fa-bookmark size"%>
+     </div>
+     <div class="new-register">
+       <%= link_to "教材の新規登録", new_teachers_textbook_path, class: "btn btn-primary fas fa-bookmark size"%>
      </div>
    </div>
+
+   <div class="col-xl-9">
+      <p class="text">
+        <h1 class=" text-success"><i class="fas fa-users"></i>生徒一覧<i class="fas fa-users"></i></h1>
+      </p>
+      <div class="student-index">
+        <% @students.each do |student| %>
+        <div class="item-student">
+          <h3>生徒番号</h3>
+            <%= student.number  %>
+            <div></div>
+            <%= link_to student.name, teachers_student_path(student.id) ,class:"text"%>
+        </div>
+        <% end %>
+      </div>
+      <div>
+        <%= paginate @students %>
+      </div>
+
+    </div>
+
+ </div>
 </div>
