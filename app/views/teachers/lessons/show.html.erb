@@ -1,20 +1,24 @@
-<div class="lesson-show">
+<div class="container">
+  <div class="row">
+    <h3>◆授業詳細画面◆</h3>
+    <h3>
+      <%= link_to "編集", edit_teachers_lesson_path, class:"btn btn-warning" %>
+      <%= link_to "削除", teachers_lesson_path(@lesson.id),class:"btn btn-warning",method: :delete, "data-confirm" => "本当に削除しますか"%>
+    </h3>
+  </div>
+    <h2 class="block fas fa-user">講師 <%= @lesson.teacher.name %></h2><br>
 
-  <ul>
-    <li><h1>授業詳細</h1></li>
-    <li><h2>講師氏名</h2><%=@lesson.teacher.name %></li>
-    <li><h2>生徒氏名</h2><%=@lesson.student.name %></li>
-    <li><h2>教材名</h2><%=@lesson.text_name%></li>
-    <li><h2>開始時間</h2><%=@lesson.starts_at %></li>
-    <li><h2>終了時間</h2><%=@lesson.ends_at %></li>
-    <li><h2>宿題</h2><%=@lesson.homework %></li>
-    <li><h2>授業予告</h2><%=@lesson.notice %></li>
-    <li><h2>授業の振り返り</h2><%=@lesson.feedback %></li>
-    <li>
-      <h2>
-        <%= link_to "編集", edit_teachers_lesson_path %>
-        <%= link_to "削除", teachers_lesson_path(@lesson.id),method: :delete, "data-confirm" => "本当に削除しますか"%>
-      </h2>
-    </li>
-  </ul>
+    <h2 class="block fas fa-user">生徒 <%= @lesson.student.name%></h2></br>
+
+    <h2 class="block fas fa-book-open">教材名 <%= @lesson.text_name%></h2> <br/>
+
+    <h2 class="block fas fa-clock">開始時間  <%= @lesson.starts_at %></h2><br/>
+
+    <h2 class="block fas fa-clock">終了時間 <%=@lesson.ends_at%></h2> <br/>
+
+    <h2 class="block fas fa-pen">宿題  <%= @lesson.homework %></h2><br/>
+
+    <h2 class="block fas fa-comment-dots">講師コメント  <%= @lesson.feedback%></h2> <br/>
+
+    <h2 class="block fas fa-bullhorn">授業予告 <%= @lesson.notice%></h2>
 </div>

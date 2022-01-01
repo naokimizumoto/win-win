@@ -15,8 +15,11 @@
     </div>
 
   <% else %>
-  <body>
+  <body >
     <div class="top">
+      <p>
+        <%= image_tag 'study.jpg', size: "700x500", class:"image-top" %>
+      </p>
       <p class="size-top"><i class="fas fa-school size-top"></i>
         ようこそwin-winへ<br>
         ログインして学習を進めよう
@@ -24,9 +27,7 @@
       <p class="text">
         <%= link_to "Log in", new_student_session_path, class:"fas fa-sign-in-alt"%>
       </p>
-      <p>
-        <%= image_tag 'study.jpg', size: "700x500" %>
-      </p>
+
     </div>
 
   </body>
