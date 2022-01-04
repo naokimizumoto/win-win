@@ -1,34 +1,35 @@
-<div class="textbook_student-register">
-   <h1>生徒教材の新規登録</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
+      <h3>◆生徒教材の関連付け◆</h3>
       <% if @textbook_student.errors.any? %>
-      <div id="error_explanation" class="alert alert-danger">
-        <ul>
-          <% @student.errors.full_messages.each do |message| %>
-            <li>
-              <%= message %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+        <div id="error_explanation" class="alert alert-danger">
+          <ul>
+            <% @textbook_student.errors.full_messages.each do |textbook_student| %>
+              <li>
+                <%= message %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-   <%= form_with model:@textbook_student, url:teachers_textbook_students_path, local:true do |f|%>
-
-
-        <p class="select">
-          <%= f.label :student_id, "生徒名"%>
-          <%= f.collection_select(:student_id, Student.all, :id, :name)%>
-        </p>
-
-
-        <p class="select">
-          <%= f.label :name, "教材名"%>
-          <%= f.collection_select(:textbook_id, Textbook.all, :id, :name)%>
-        </p>
-
-      <h2 class="text1">
-
-          <%= f.submit "新規登録"%>
-
-      </h2>
-  　 <% end %>
+    </div>
   </div>
+
+  <div class="row">
+
+    <div class="col-lg-12">
+    <%= form_with model:@textbook_student, url:teachers_textbook_students_path, local:true do |f|%>
+      <h2 class="block fas fas fa-book">生徒名</h2>
+        <%= f.collection_select(:student_id, Student.all, :id, :name)%><br>
+      <h2 class="block fas fa-file-image">教材名</h2>
+         <%= f.collection_select(:textbook_id, Textbook.all, :id, :name)%><br>
+
+      <h2 class="botton">
+         <%= f.submit "授業の新規登録を行う",  class:"btn btn-warning"%><br>
+      </h2>
+     <% end %>
+     </div>
+  </div>
+</div>

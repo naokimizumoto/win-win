@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
-
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
       <h3>◆授業新規登録◆</h3>
       <% if @lesson.errors.any? %>
         <div id="error_explanation" class="alert alert-danger">
@@ -13,10 +14,12 @@
           </ul>
         </div>
       <% end %>
-
+    </div>
   </div>
 
   <div class="row">
+
+    <div class="col-lg-12">
     <%= form_with model: @lesson,url: teachers_lessons_path,local: true do |f|%>
       <h2 class="block fas fa-user">講師氏名</h2>
         <%= f.collection_select(:teacher_id, Teacher.all, :id, :name) %><br>
@@ -34,9 +37,10 @@
         <%= f.text_area :feedback %><br />
       <h2 class="block fas fa-bullhorn">授業予告</h2>
         <%= f.text_area :notice%><br />
-      <div class="new-lesson-register">
-         <%= f.submit "授業の新規登録を行う",  class:"btn btn-warning"%>
-      </div>
+      <h2 class="botton">
+         <%= f.submit "授業の新規登録を行う",  class:"btn btn-warning"%><br>
+      </h2>
      <% end %>
+     </div>
   </div>
 </div>

@@ -1,25 +1,35 @@
-<div class="student-register">
-   <h1>教材の新規登録</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
+      <h3>◆教材登録画面◆</h3>
       <% if @textbook.errors.any? %>
-      <div id="error_explanation" class="alert alert-danger">
-        <ul>
-          <% @textbook.errors.full_messages.each do |message| %>
-            <li>
-              <%= message %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+        <div id="error_explanation" class="alert alert-danger">
+          <ul>
+            <% @textbook.errors.full_messages.each do |textbook| %>
+              <li>
+                <%= message %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-    <%= form_with model:@textbook, url: teachers_textbooks_path, local:true do |f|%>
-
-      <h2 class="block">教材名</h2>
-         <%= f.text_field :name%><br>
-      <h2 class="block">教材画像</h2>
-         <%= f.attachment_field :image%><br>
-
-      <h2 class="text1">
-          <%= f.submit "新規登録"%>
-      </h2>
-  　 <% end %>
+    </div>
   </div>
+
+  <div class="row">
+
+    <div class="col-lg-12">
+    <%= form_with model:@textbook, url: teachers_textbooks_path, local:true do |f|%>
+      <h2 class="block fas fas fa-book">教材名</h2>
+        <%= f.text_field :name%><br>
+      <h2 class="block fas fa-file-image">教材画像</h2>
+         <%= f.attachment_field :image %><br>
+
+      <h2 class="botton">
+         <%= f.submit "授業の新規登録を行う",  class:"btn btn-warning"%><br>
+      </h2>
+     <% end %>
+     </div>
+  </div>
+</div>

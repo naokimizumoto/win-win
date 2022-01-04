@@ -1,7 +1,7 @@
 <div class="container-fluid">
  <div class="row">
 
-   <div class="col-xl-3 left">
+   <div class="col-lg-3 left">
      <div class="new-register">
        <%= link_to "  生徒登録", new_teachers_student_path, class: "btn btn-warning fas fa-user " %>
      </div>
@@ -13,27 +13,20 @@
      </div>
    </div>
 
-   <div class="col-xl-9">
+   <div class="col-lg-9">
       <p class="text">
         <h1><i class="fas fa-users"></i>生徒一覧<i class="fas fa-users"></i></h1>
       </p>
-      <table border="2" align="left">
-        <tbody>
-        　<tr>
-        　  <th>id</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
-        　</tr>
+      <div class="contents">
+      <% @students.each do |student| %>
+      <div class="box">
 
-          <tr>
-            <% @students.each do |student| %>
-            <th>生徒番号</th><td> <%= student.number %></td>
-          </tr>
-          <tr>
-            <th>生徒氏名</th><td><%= link_to student.name, teachers_student_path(student.id) ,class:"text"%></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-   </div>
+        <h5 >氏名</h5>
+          <%= link_to student.name, teachers_student_path(student.id), class: "box-text"%>
+      </div>
+      <% end %>
+      <h2 class="page">
+        <%= paginate @students %>
+      </h2>
+    </div>
 
- </div>
-</div>
