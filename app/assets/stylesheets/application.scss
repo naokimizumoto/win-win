@@ -322,31 +322,29 @@ margin-right: 0;
 }
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
-.itemleft{
-    height: 300px;
-    margin: 0 auto;
-    margin-top: 100px;
+.winwin{
+  margin-left: auto;
+  margin-right: auto;
+}
+.top{
+  width: 100%;
+}
+.image{
+  margin: 0 auto;
+}
+.image-top{
+  width: 100%;
+  margin-left: 0;
+}
+.nav-icon{
+  margin-bottom: 15px;
+}
+.size{
+  font-size: 20px;
+}
 
 }
-.itemright{
-  height: 300px;
-  margin: 0 auto;
-  margin-top: 100px;
-}
-.fc-view-container {
-  margin-top: 50px;
-}
-.fc-content-skeleton{
-  margin-top: 30px;
-}
-.fc-row fc-week fc-widget-content{
-  height: 50px;
-}
-.item{
-  margin: 0 auto;
-  margin-top: 50px;
-}
-}
+
 /* スマートフォンサイズ（375px）以下の際に適用される設定 */
 @media screen and (max-width:375px) {
 .nav{
@@ -390,7 +388,7 @@ margin-right: 0;
   width: 375px;
   padding: 0 ;
 }
-}
+
 .fc-scroller {
   height: auto !important;
 }
@@ -400,5 +398,4 @@ margin-right: 0;
 .container-text{
   margin-left: 100px;
 }
-
-
+}
